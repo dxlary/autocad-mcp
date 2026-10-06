@@ -1,0 +1,81 @@
+name: Bug 报告 / Bug report
+description: 报告一个缺陷或异常
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        提交前请先在 Issues 搜索是否已有相同问题。谢谢！
+  - type: dropdown
+    id: acad_version
+    attributes:
+      label: AutoCAD 版本
+      description: 您正在使用的 AutoCAD 版本
+      options:
+        - "2026"
+        - "2025"
+        - "2024"
+        - "2023"
+        - "2022"
+        - "2021"
+        - "2020"
+        - "2019"
+        - "2018"
+        - "AutoCAD LT（本项目不支持）"
+        - "其他 / 不清楚"
+    validations:
+      required: true
+  - type: input
+    id: os
+    attributes:
+      label: 操作系统
+      placeholder: 例如 Windows 11 24H2
+    validations:
+      required: true
+  - type: input
+    id: python
+    attributes:
+      label: Python 版本
+      placeholder: 例如 3.13.12
+    validations:
+      required: true
+  - type: input
+    id: pywin32
+    attributes:
+      label: pywin32 版本
+      placeholder: 例如 306
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: 自查清单
+      options:
+        - label: AutoCAD 已启动且打开了图纸
+        - label: 用的是完整版 AutoCAD，不是 LT
+        - label: 已执行 `python server.py --selftest` 且全部通过
+        - label: 已在 WorkBuddy 连接器页面对 autocad-mcp 点过 Trust
+  - type: textarea
+    id: repro
+    attributes:
+      label: 复现步骤
+      description: 一步步描述如何触发问题
+      placeholder: |
+        1. ...
+        2. ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 期望结果
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: 实际结果 / 报错
+      description: 粘贴工具返回的错误文本或截图
+    validations:
+      required: true
