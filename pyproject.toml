@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "autocad-mcp"
+version = "0.1.0"
+description = "MCP server that drives AutoCAD through COM automation on Windows"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["pywin32>=306"]
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: Microsoft :: Windows",
+    "Programming Language :: Python :: 3",
+]
+
+[project.urls]
+Homepage = "https://github.com/dxlary/autocad-mcp"
+Issues = "https://github.com/dxlary/autocad-mcp/issues"
+
+[project.scripts]
+autocad-mcp = "server:serve"
+
+[tool.setuptools]
+py-modules = ["server"]
