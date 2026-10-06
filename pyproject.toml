@@ -23,4 +23,4 @@ Issues = "https://github.com/dxlary/autocad-mcp/issues"
 autocad-mcp = "server:serve"
 
 [tool.setuptools]
-py-modules = ["server"]
+py-modules = ["server", "acad_core", "acad_com", "acad_tools_a", "acad_tools_b"]
